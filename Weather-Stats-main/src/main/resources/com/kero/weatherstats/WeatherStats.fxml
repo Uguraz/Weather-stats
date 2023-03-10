@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kero.weatherstats.controllers.WeatherController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #d2d2d2;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <MFXComboBox fx:id="stationComboBox" floatMode="DISABLED" floatingText="Station" maxHeight="32.0" minHeight="32.0" prefHeight="32.0" prefWidth="185.0" promptText="Station">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font></MFXComboBox>
+            <MFXComboBox fx:id="typeComboBox" floatMode="DISABLED" floatingText="Data type" maxHeight="32.0" minHeight="32.0" prefHeight="32.0" prefWidth="185.0" promptText="Data type">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font></MFXComboBox>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #d2d2d2;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <MFXDatePicker fx:id="startDate" floatingText="Start date" maxHeight="32.0" minHeight="32.0" prefHeight="32.0" prefWidth="185.0" promptText="Start date">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font></MFXDatePicker>
+            <MFXDatePicker fx:id="endDate" floatingText="End date" maxHeight="32.0" minHeight="32.0" prefHeight="32.0" prefWidth="185.0" promptText="End date">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font></MFXDatePicker>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <right>
+      <HBox BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <Separator orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: white;" />
+            <VBox fx:id="sidebarVbox" prefWidth="175.0" spacing="8.0" style="-fx-background-color: white;">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <Label text="Weather statistics">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="weatherVbox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="8.0" />
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label text="Station information">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="stationVbox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="8.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </right>
+   <center>
+      <LineChart fx:id="lineChart" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </LineChart>
+   </center>
+</BorderPane>
